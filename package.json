@@ -1,0 +1,24 @@
+{
+  "name": "tiktok-backend",
+  "version": "1.0.0",
+  "description": "<img width=\"938\" alt=\"Screen Shot 2023-06-21 at 3 16 07 AM\" src=\"https://github.com/taylankalkan01/tiktok-backend/assets/69582787/4b57d10d-8a98-4fe9-85fd-8939c6bebde1\">",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/taylankalkan01/tiktok-backend.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/taylankalkan01/tiktok-backend/issues"
+  },
+  "homepage": "https://github.com/taylankalkan01/tiktok-backend#readme",
+  "devDependencies": {
+    "@types/node": "^20.3.1",
+    "typescript": "^5.1.3"
+  }
+}
