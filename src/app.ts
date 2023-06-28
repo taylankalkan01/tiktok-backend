@@ -40,5 +40,5 @@ app.get("/healthcheck", (_, res: Response) => {
   res.status(200).json({ error: false, message: "healthcheck" });
 });
 
-connectDB()
+connectDB();
 export default app;
