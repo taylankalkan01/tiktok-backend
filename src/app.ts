@@ -1,7 +1,7 @@
 //npm packages
 import express, { Application, Response } from "express";
 require("dotenv").config({
-  path: ".env",
+  path: ".env.local",
 });
 import cookieParser from "cookie-parser";
 import helmet from "helmet";
@@ -11,6 +11,7 @@ import mongoSanitize from "express-mongo-sanitize";
 import momentTimezone from "moment-timezone";
 
 // Custom Modules, Packages, Configs, etc.
+import { connectDB } from "./databases/mongoDB";
 
 //Application
 const app: Application = express();
@@ -39,4 +40,5 @@ app.get("/healthcheck", (_, res: Response) => {
   res.status(200).json({ error: false, message: "healthcheck" });
 });
 
+connectDB()
 export default app;
