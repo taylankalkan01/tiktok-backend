@@ -1,11 +1,13 @@
 import { Request, Response } from "express";
 import User from "../../models/User";
 import bcrypt from "bcrypt";
+import { userRegisterInput } from "../../schemas/inputValidations";
 
 export const register = async (req: Request, res: Response) => {
   const { username, fullName, email, password, profilePicture, bio, phoneNumber } = req.body;
   try {
-    //validation todo:
+    //validation
+    userRegisterInput.parse(req.body);
 
     //checking if the email is already in the db
     const emailExist = await User.findOne({ email });
