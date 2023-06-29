@@ -7,7 +7,7 @@
     "dev": "nodemon --watch './**/*.ts' --exec 'ts-node' src/index.ts",
     "build": "tsc",
     "start": "node dist/index.js",
-    "format": "prettier --config .prettierrc 'src/**/*.ts' --write",
+    "format": "prettier --config .prettierrc 'src/**/*.ts' '__tests__/**/*.ts' --write",
     "test": "jest --runInBand --detectOpenHandles --forceExit"
   },
   "repository": {
