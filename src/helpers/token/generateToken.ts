@@ -1,7 +1,7 @@
 import User from "../../models/User";
 import jwt from "jsonwebtoken";
 
-export const genereateUserToken = (user: User) => {
+export const generateUserToken = (user: User) => {
   try {
     const payload = { userId: user._id };
 
