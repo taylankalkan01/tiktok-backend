@@ -2,6 +2,7 @@ import { Request, Response } from "express";
 import User from "../../models/User";
 import bcrypt from "bcrypt";
 import { userRegisterInput } from "../../schemas/inputValidations";
+import { z } from "zod";
 
 export const register = async (req: Request, res: Response) => {
   const { username, fullName, email, password, profilePicture, bio, phoneNumber } = req.body;
@@ -49,6 +50,19 @@ export const register = async (req: Request, res: Response) => {
       data: data,
     });
   } catch (error) {
-    res.status(500).json({ error: true, message: error });
+    //validation error
+    if (error instanceof z.ZodError) {
+      const formattedErrors = error.errors.map((e) => ({
+        field: e.path.join("."),
+        message: e.message,
+      }));
+      return res.status(422).json({
+        error: true,
+        message: "Validation failed",
+        data: formattedErrors,
+      });
+    } else {
+      res.status(500).json({ error: true, message: error });
+    }
   }
 };
