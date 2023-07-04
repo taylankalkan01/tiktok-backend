@@ -10,7 +10,7 @@ export const generateUserToken = (user: User) => {
       return Promise.reject("Something wrong with token key");
     }
 
-    const accessToken = jwt.sign(payload, key, {expiresIn: "3d"});
+    const accessToken = jwt.sign(payload, key, { expiresIn: "3d" });
 
     return Promise.resolve(accessToken);
   } catch (error) {
