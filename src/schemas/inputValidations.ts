@@ -48,3 +48,19 @@ export const userRegisterInput = z.object({
 
   phoneNumber: z.string().regex(phoneRegex, "Invalid Number!").optional(),
 });
+
+export const userLoginInput = z.object({
+  email: z
+    .string({
+      required_error: "Email is required",
+      invalid_type_error: "email must be a string",
+    })
+    .email("Invalid email address"),
+
+  password: z
+    .string({
+      required_error: "Password is required",
+      invalid_type_error: "Password must be a string",
+    })
+    .min(3, { message: "Password must be 3 or more characters long" }),
+});

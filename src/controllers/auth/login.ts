@@ -2,12 +2,14 @@ import { Request, Response } from "express";
 import User from "../../models/User";
 import bcrypt from "bcrypt";
 import { generateUserToken } from "../../helpers/token/generateToken";
+import { userLoginInput } from "../../schemas/inputValidations";
 
 export const login = async (req: Request, res: Response) => {
   let token;
   const { email, password } = req.body;
   try {
-    //validation todo
+    //validation
+    userLoginInput.parse(req.body);
 
     //find user
     const user = await User.findOne({ email });
