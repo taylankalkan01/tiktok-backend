@@ -8,7 +8,7 @@
     "build": "tsc",
     "start": "node dist/index.js",
     "format": "prettier --config .prettierrc 'src/**/*.ts' '__tests__/**/*.ts' --write",
-    "test": "jest --runInBand --detectOpenHandles --forceExit"
+    "test": "jest --runInBand --watchAll --detectOpenHandles --forceExit"
   },
   "repository": {
     "type": "git",
