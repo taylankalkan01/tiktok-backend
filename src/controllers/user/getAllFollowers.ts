@@ -22,7 +22,8 @@ export const getAllFollowers = async (req: Request, res: Response) => {
     // Get the user's followers
     const data = await User.find({ _id: { $in: user.followersIds } })
       .skip(skip)
-      .limit(pageSize);
+      .limit(pageSize)
+      .select("id username profilePicture");
 
     res.status(200).json({
       error: false,
