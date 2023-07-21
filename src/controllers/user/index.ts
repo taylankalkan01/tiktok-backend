@@ -3,6 +3,7 @@ import { followUser } from "./followUser";
 import { unfollowUser } from "./unfollowUser";
 import { getAllFollowers } from "./getAllFollowers";
 import { getAllFollowings } from "./getAllFollowings";
+import { privAccount } from "./privAccount";
 
 export default {
   editProfile,
@@ -10,4 +11,5 @@ export default {
   unfollowUser,
   getAllFollowers,
   getAllFollowings,
+  privAccount,
 };
